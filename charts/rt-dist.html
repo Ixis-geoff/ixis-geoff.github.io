@@ -61,8 +61,8 @@ $.getJSON("https://d1zu7rso78.execute-api.us-east-1.amazonaws.com/dev/rt?metric=
         .data(data)
         .enter().append("rect")
           .attr("class", "bar")
-          .attr("x", function(d) { return x(d.letter); })
-          .attr("y", function(d) { return y(d.frequency); })
+          .attr("x", function(d) { return x(d); })
+          .attr("y", function(d) { return y(d); })
           .attr("width", x.bandwidth())
           .attr("height", function(d) { return height - y(d.frequency); });
 })//end getJSON
