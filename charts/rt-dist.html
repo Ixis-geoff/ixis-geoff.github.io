@@ -38,11 +38,6 @@ $.getJSON("https://d1zu7rso78.execute-api.us-east-1.amazonaws.com/dev/rt?metric=
     var g = svg.append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.tsv("data.tsv", function(d) {
-      d.frequency = +d.frequency;
-      return d;
-    }, function(error, data) {
-      if (error) throw error;
 
       x.domain(_x);
       y.domain(_y);
@@ -70,9 +65,7 @@ $.getJSON("https://d1zu7rso78.execute-api.us-east-1.amazonaws.com/dev/rt?metric=
           .attr("y", function(d) { return y(d.frequency); })
           .attr("width", x.bandwidth())
           .attr("height", function(d) { return height - y(d.frequency); });
-    });
-    }
-)//end getJSON
+})//end getJSON
 
 
 </script>
