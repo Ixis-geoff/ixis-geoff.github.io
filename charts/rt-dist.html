@@ -20,14 +20,12 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
-$.getJSON("https://d1zu7rso78.execute-api.us-east-1.amazonaws.com/dev/rt?metric=event113&num=100",
+$.getJSON("https://d1zu7rso78.execute-api.us-east-1.amazonaws.com/dev/rt?metric=event113&num=100", function(data){
     var _x = [], _y = [];
-    function(data){
       for(var i = 0; i < data.length; ++i){
         _y.push(data[i].ts);
         _x.push(i);
       }
-    }
 
     var svg = d3.select("svg"),
         margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -73,6 +71,7 @@ $.getJSON("https://d1zu7rso78.execute-api.us-east-1.amazonaws.com/dev/rt?metric=
           .attr("width", x.bandwidth())
           .attr("height", function(d) { return height - y(d.frequency); });
     });
+    }
 )//end getJSON
 
 
